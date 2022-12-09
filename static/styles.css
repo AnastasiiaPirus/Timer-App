@@ -47,6 +47,7 @@ main {
   color: #A23944;
   box-sizing: border-box;
   overflow-x: hidden;
+  min-height: 55vh !important;
 }
 
 .page {

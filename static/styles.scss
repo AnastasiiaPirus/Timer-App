@@ -83,7 +83,9 @@ main {
     color: $color-3;
     box-sizing: border-box;
     overflow-x: hidden;
+    min-height:55vh!important;
 }
+
 
 .page {
     box-sizing: border-box;
@@ -450,7 +452,6 @@ a:hover::before {
     #navbar {
         position: relative;
         top: auto;
-
     }
 
     .navbar-brand img {

@@ -115,22 +115,25 @@ def register():
 @app.route("/logout")
 def logout():
     """Log user out"""
-    #pause user timer
     user_id = session["user_id"]
-    is_paused = request.form.get("is_paused")
-    upd_timestamp = datetime.now()
-    old_timestamp = db.execute("SELECT timestamp FROM timers WHERE user_id = ? ;", user_id)
-    old_timestamp = old_timestamp[0]['timestamp']
-    old_timestamp = datetime.strptime(old_timestamp, '%Y-%m-%d %H:%M:%S')
-    time_actual = (upd_timestamp - old_timestamp).seconds
-    totaltime = db.execute("SELECT totaltime FROM timers WHERE user_id = ? ;", user_id)
-    totaltime = totaltime[0]['totaltime']
-    totaltime = totaltime + time_actual
-    timeramount = db.execute("SELECT timeramount FROM timers WHERE user_id = ? ;", user_id)
-    timeramount = int(timeramount[0]['timeramount'])
-    timeramount = timeramount - time_actual
-    db.execute("UPDATE timers SET timeramount = ?, is_paused = ?, totaltime = ? WHERE user_id = ? ;", timeramount,
-               1, totaltime, user_id)
+    is_paused = db.execute("SELECT is_paused FROM timers WHERE user_id = ? ;", user_id)
+    is_paused = is_paused[0]['is_paused']
+    if is_paused == 0 :
+    #pause user timer    
+        is_paused = request.form.get("is_paused")
+        upd_timestamp = datetime.now()
+        old_timestamp = db.execute("SELECT timestamp FROM timers WHERE user_id = ? ;", user_id)
+        old_timestamp = old_timestamp[0]['timestamp']
+        old_timestamp = datetime.strptime(old_timestamp, '%Y-%m-%d %H:%M:%S')
+        time_actual = (upd_timestamp - old_timestamp).seconds
+        totaltime = db.execute("SELECT totaltime FROM timers WHERE user_id = ? ;", user_id)
+        totaltime = totaltime[0]['totaltime']
+        totaltime = totaltime + time_actual
+        timeramount = db.execute("SELECT timeramount FROM timers WHERE user_id = ? ;", user_id)
+        timeramount = int(timeramount[0]['timeramount'])
+        timeramount = timeramount - time_actual
+        db.execute("UPDATE timers SET timeramount = ?, is_paused = ?, totaltime = ? WHERE user_id = ? ;", 0,
+                1, totaltime, user_id)
     # Forget any user_id
     session.clear()
     
