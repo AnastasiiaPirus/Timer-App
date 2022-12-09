@@ -1,0 +1,237 @@
+#Duck {
+    height: 36px;
+    width: 36px;
+    background: url("imgs/sprites/Duck_idle.png") 0px 0px;
+    animation: duck 0.8s steps(10) infinite;
+    
+}
+
+@keyframes duck {
+    100% {
+        background-position: -360px;
+    }
+}
+
+#Bat {
+    height: 30px;
+    width: 46px;
+    background: url("imgs/sprites/Bat_idle.png") 0px 0px;
+    animation: bat 0.8s steps(7) infinite;
+
+}
+
+@keyframes bat {
+    100% {
+        background-position: -322px;
+    }
+}
+
+#Bunny {
+    height: 44px;
+    width: 34px;
+    background: url("imgs/sprites/Bunny_idle.png") 0px 0px;
+    animation: bunny 0.8s steps(8) infinite;
+
+}
+
+@keyframes bunny {
+    100% {
+        background-position: -272px;
+    }
+}
+
+#Radish {
+    height: 38px;
+    width: 30px;
+    background: url("imgs/sprites/Radish_idle.png") 0px 0px;
+    animation: radish 0.8s steps(9) infinite;
+
+}
+
+@keyframes radish {
+    100% {
+        background-position: -270px;
+    }
+}
+
+#Chameleon{
+    height: 38px;
+    width: 84px;
+    background: url("imgs/sprites/Chameleon_idle.png") 0px 0px;
+    animation: chameleon 0.8s steps(13) infinite;
+
+}
+
+@keyframes chameleon {
+    100% {
+        background-position: -1092px;
+    }
+}
+
+#Bee{
+    height: 34px;
+    width: 36px;
+    background: url("imgs/sprites/Bee_idle.png") 0px 0px;
+    animation: bee 0.8s steps(6) infinite;
+
+}
+
+@keyframes bee {
+    100% {
+        background-position: -216px;
+    }
+}
+
+#Chicken{
+    height: 34px;
+    width: 32px;
+    background: url("imgs/sprites/Chicken_idle.png") 0px 0px;
+    animation: chicken 0.8s steps(13) infinite;
+
+}
+
+@keyframes chicken {
+    100% {
+        background-position: -416px;
+    }
+}
+
+#FatBird{
+    height: 48px;
+    width: 40px;
+    background: url("imgs/sprites/FatBird_idle.png") 0px 0px;
+    animation: fatbird 0.8s steps(8) infinite;
+
+}
+
+@keyframes fatbird {
+    100% {
+        background-position: -320px;
+    }
+}
+
+#Ghost{
+    height: 30px;
+    width: 44px;
+    background: url("imgs/sprites/Ghost_idle.png") 0px 0px;
+    animation: ghost 0.8s steps(10) infinite;
+
+}
+
+@keyframes ghost {
+    100% {
+        background-position: -440px;
+    }
+}
+
+#Mushroom{
+    height: 32px;
+    width: 32px;
+    background: url("imgs/sprites/Mushroom_idle.png") 0px 0px;
+    animation: mushroom 0.8s steps(14) infinite;
+
+}
+
+@keyframes mushroom {
+    100% {
+        background-position: -448px;
+    }
+}
+
+#Pig{
+    height: 30px;
+    width: 36px;
+    background: url("imgs/sprites/Pig_idle.png") 0px 0px;
+    animation: pig 0.8s steps(9) infinite;
+
+}
+
+@keyframes pig {
+    100% {
+        background-position: -324px;
+    }
+}
+
+#Plant{
+    height: 42px;
+    width: 44px;
+    background: url("imgs/sprites/Plant_idle.png") 0px 0px;
+    animation: plant 0.8s steps(11) infinite;
+
+}
+
+@keyframes plant {
+    100% {
+        background-position: -484px;
+    }
+}
+
+#Rino{
+    height: 34px;
+    width: 52px;
+    background: url("imgs/sprites/Rino_idle.png") 0px 0px;
+    animation: rino 0.8s steps(11) infinite;
+
+}
+
+@keyframes rino {
+    100% {
+        background-position: -572px;
+    }
+}
+
+#Slime{
+    height: 30px;
+    width: 44px;
+    background: url("imgs/sprites/Slime_idle.png") 0px 0px;
+    animation: slime 0.8s steps(10) infinite;
+
+}
+
+@keyframes slime {
+    100% {
+        background-position: -440px;
+    }
+}
+
+#Snail{
+    height: 24px;
+    width: 38px;
+    background: url("imgs/sprites/Snail_idle.png") 0px 0px;
+    animation: snail 0.8s steps(15) infinite;
+
+}
+
+@keyframes snail {
+    100% {
+        background-position: -570px;
+    }
+}
+
+#Trunk{
+    height: 32px;
+    width: 64px;
+    background: url("imgs/sprites/Trunk_idle.png") 0px 0px;
+    animation: trunk 0.8s steps(18) infinite;
+
+}
+
+@keyframes trunk {
+    100% {
+        background-position: -1152px;
+    }
+}
+
+#BlueBird{
+    height: 32px;
+    width: 32px;
+    background: url("imgs/sprites/BlueBird_idle.png") 0px 0px;
+    animation: bluebird 0.8s steps(9) infinite;
+
+}
+
+@keyframes bluebird {
+    100% {
+        background-position: -288px;
+    }
+}

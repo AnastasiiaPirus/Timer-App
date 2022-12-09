@@ -1,0 +1,233 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block main %}
+
+{% if timeramount <= 0 %} <div class="container">
+    <div class=timer>
+        <form action="/" method="post">
+            <div class="set_timer">
+                <h1 id="title">Select time:</h1>
+                <div class="border_img">
+                    <div class="scroll-container" id="container">
+                        <div>
+                            <input type="radio" id="disabled" name="minutes" value="0" disabled
+                                style="visibility:collapse">
+                            <label for="disabled" class="scroll-area" style="color:transparent">_</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="1min" name="minutes" value="1" style="visibility:collapse"
+                                class="radio">
+                            <label for="1min" class="scroll-area">1</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="5min" name="minutes" value="5" style="visibility:collapse"
+                                class="radio">
+                            <label for="5min" class="scroll-area">5</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="10min" name="minutes" value="10" style="visibility:collapse"
+                                class="radio">
+                            <label for="10min" class="scroll-area">10</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="15min" name="minutes" value="15" style="visibility:collapse"
+                                class="radio">
+                            <label for="15min" class="scroll-area ">15</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="20min" name="minutes" value="20" style="visibility:collapse"
+                                class="radio">
+                            <label for="20min" class="scroll-area focus">20</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="25min" name="minutes" value="25" style="visibility:collapse" checked
+                                class="radio">
+                            <label for="25min" class="scroll-area ">25</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="30min" name="minutes" value="30" style="visibility:collapse"
+                                class="radio">
+                            <label for="30min" class="scroll-area ">30</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="35min" name="minutes" value="35" style="visibility:collapse"
+                                class="radio">
+                            <label for="35min" class="scroll-area">35</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="40min" name="minutes" value="40" style="visibility:collapse"
+                                class="radio">
+                            <label for="40min" class="scroll-area">40</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="45min" name="minutes" value="45" style="visibility:collapse"
+                                class="radio">
+                            <label for="45min" class="scroll-area ">45</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="50min" name="minutes" value="50" style="visibility:collapse"
+                                class="radio">
+                            <label for="50min" class="scroll-area">50</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="55min" name="minutes" value="55" style="visibility:collapse"
+                                class="radio">
+                            <label for="55min" class="scroll-area ">55</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="60min" name="minutes" value="60" style="visibility:collapse"
+                                class="radio">
+                            <label for="60min" class="scroll-area ">60</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="disabled2" name="minutes" value="0" disabled
+                                style="visibility:collapse">
+                            <label for="disabled" class="scroll-area" style="color:transparent">_</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" id="submit" class="buttons">SET TIME</button>
+        </form>
+
+    </div>
+    <script type="text/javascript">
+        // move scroll to checked element
+        const focused = document.querySelector('.focus')
+        focused.scrollIntoView({ behavior: 'smooth' })
+
+    </script>
+    <script type="application/javascript">
+        function scroll() {
+            const ele = document.getElementById('container');
+            ele.style.cursor = 'grab';
+
+            let pos = { top: 0, left: 0, x: 0, y: 0 };
+
+            const mouseDownHandler = function (e) {
+                ele.style.cursor = 'grabbing';
+                ele.style.userSelect = 'none';
+
+                pos = {
+                    left: ele.scrollLeft,
+                    top: ele.scrollTop,
+                    // Get the current mouse position
+                    x: e.clientX,
+                    y: e.clientY,
+                };
+
+                document.addEventListener('mousemove', mouseMoveHandler);
+                document.addEventListener('mouseup', mouseUpHandler);
+            };
+
+            const mouseMoveHandler = function (e) {
+                // How far the mouse has been moved
+                const dx = e.clientX - pos.x;
+                const dy = e.clientY - pos.y;
+
+                // Scroll the element
+                ele.scrollTop = pos.top - dy;
+                ele.scrollLeft = pos.left - dx;
+            };
+
+            const mouseUpHandler = function () {
+                ele.style.cursor = 'grab';
+                ele.style.removeProperty('user-select');
+
+                document.removeEventListener('mousemove', mouseMoveHandler);
+                document.removeEventListener('mouseup', mouseUpHandler);
+            };
+
+            // Attach the handler
+            ele.addEventListener('mousedown', mouseDownHandler);
+        };
+        scroll();
+    </script>
+
+    {% else %}
+    <h1>Time left:</h1>
+    <h2 class="time"></h2>
+    <div class="locked_animal">
+        <img src = "{{next_sprite_location}}" id = "locked_animal_img">
+    </div>
+    {%if is_paused == 0 %}
+    <form action="/" method="post" class="form_buttons">
+        <button type="submit" id="pause" name="is_paused" value="1" class="buttons">PAUSE</button>
+        <button type="submit" id="stop" name="stop" value="2" class="buttons">STOP</button>
+    </form>
+
+    {%else%}
+    <form action="/" method="post" class="form_buttons">
+        <button type="submit" id="resume" name="resume" value="0" class="buttons">RESUME</button>
+        <button type="submit" id="stop" name="stop" value="2" class="buttons">STOP</button>
+    </form>
+    {%endif%}
+
+    <script type="application/javascript">
+        var timer = "{{ timeramount | safe }}"
+        var is_paused = "{{ is_paused | safe }}"
+        console.log(timer);
+        console.log(is_paused);
+        const currentTime = document.querySelector('.time');
+
+        function addZero(n) {
+            return n < 10 ? `0${n}` : n;
+        }
+
+        function getTime(seconds) {
+
+            current_timer_minutes = Math.floor(seconds / 60, 0)
+            current_timer_seconds = Math.floor(seconds - current_timer_minutes * 60, 0)
+            let timeString = `${addZero(current_timer_minutes)}:${addZero(current_timer_seconds)}`
+            currentTime.innerHTML = timeString;
+
+            if (seconds >= 1) {
+
+                if (is_paused == 0) {
+                    console.log(is_paused, " is not paused");
+                    var myTimeout = setTimeout(getTime, 1000, seconds - 1);
+                }
+                else {
+                    clearTimeout(myTimeout);
+                    console.log(is_paused, " is paused");
+                }
+
+            } else {
+                clearTimeout(myTimeout);
+
+                console.log("finish");
+
+                fetch(`${window.origin}/`, {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json, text/plain, */*',
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        "finished": 1,
+                    })
+                })
+                    .then((response) => response.JSON)
+                // .then((data) => console.log(data));
+                function redirect() {
+                    window.location.href = "/";
+                }
+
+                setTimeout(redirect, 2000);
+
+                return;
+
+            }
+        }
+        getTime(timer);
+
+    </script>
+
+
+
+    {% endif %}
+    {% endblock %}

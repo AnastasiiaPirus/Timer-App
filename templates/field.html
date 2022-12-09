@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block main %}
+<!-- {% if timeramount <= 0 %} <h1>Go back to work!</h1>
+    {%else%}
+    <h1>Time left:</h1>
+    <h2 class="time"></h2>
+    {%endif%} -->
+
+    <div class="field" id="field">
+        <span class="time"style="display:none;"></span>
+        <div class="forest">
+            <img src="static/imgs/forest.png">
+        </div>
+        <div class="home">
+            <img src="static/imgs/home.png">
+        </div>
+        {%if number_of_names %}
+        {%for i in range(number_of_names) %}
+        <div class="sprites">
+            <div class="animation" id="{{names[i]}}" draggable="true"></div>
+        </div>
+        {% endfor %}
+        {%endif%}
+    </div>
+    <br><br>
+
+    <!-- <div class="field" style="width: 500px; height: 170px"></div> -->
+    </div>
+
+
+
+
+    <script>
+        let field = document.getElementById('field');
+        let width = field.offsetWidth;
+        let height = field.offsetHeight;
+
+        count = Math.floor(width * height / 50000);
+        console.log(count, "count")
+
+
+        for (let i = 0; i < count; i++) {
+
+            let box = document.createElement("div");
+            box.classList.add("box");
+            let img = document.createElement("img");
+            n = Math.round(Math.random() * 15) + 1;
+            img.src = `static/imgs/decorators/${n}.png`
+            img.style.position = "absolute"
+            img.style.left = Math.round(Math.random() * width * 0.75) + "px";
+            img.style.top = Math.round(Math.random() * height * 0.8) + "px";
+
+            field.prepend(box);
+            box.appendChild(img);
+
+        }
+
+        let sprites = document.getElementsByClassName("sprites")
+        console.log(sprites, "sprites")
+
+        for (const sprite of sprites) {
+            sprite.style.position = "absolute"
+            sprite.style.left = Math.round(Math.random() * width * 0.75) + "px";
+            sprite.style.top = Math.round(Math.random() * height * 0.8) + "px";
+        }
+
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+    $( function() {
+      $( ".animation" ).draggable();
+    } );
+    </script>
+
+
+    {% endblock %}

@@ -1,0 +1,209 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block main %}
+
+{% if timeramount <= 0 %} <div class="container">
+
+    <div class=timer>
+        <form action="/" method="post">
+            <div class="set_timer">
+                <h1 id="title">Select time:</h1>
+                <br>
+                <div class="border_img">
+                    <img src="static/imgs/clock_red_blue.png" class="clock">
+                    <div class = "arrows">
+                        <img id="up" src="static/imgs/up2.png" alt="up">
+                        <img id="down" src="static/imgs/down2.png" alt="down">
+                    </div>
+                    <div class="scroll-container" id="container">
+
+                        <div>
+                            <input type="radio" id="disabled" name="minutes" value="0" disabled
+                                style="visibility:collapse">
+                            <label for="disabled" class="scroll-area" style="color:transparent">_</label>
+                        </div>
+                        <!-- <div>
+                            <input type="radio" id="1min" name="minutes" value="1" style="visibility:collapse"
+                                class="radio">
+                            <label for="1min" class="scroll-area">1</label>
+                        </div> -->
+                        <div>
+                            <input type="radio" id="5min" name="minutes" value="5" style="visibility:collapse"
+                                class="radio">
+                            <label for="5min" class="scroll-area">5</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="10min" name="minutes" value="10" style="visibility:collapse"
+                                class="radio">
+                            <label for="10min" class="scroll-area">10</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="15min" name="minutes" value="15" style="visibility:collapse"
+                                class="radio">
+                            <label for="15min" class="scroll-area ">15</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="20min" name="minutes" value="20" style="visibility:collapse"
+                                class="radio">
+                            <label for="20min" class="scroll-area focus">20</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="25min" name="minutes" value="25" style="visibility:collapse" checked
+                                class="radio">
+                            <label for="25min" class="scroll-area ">25</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="30min" name="minutes" value="30" style="visibility:collapse"
+                                class="radio">
+                            <label for="30min" class="scroll-area ">30</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="35min" name="minutes" value="35" style="visibility:collapse"
+                                class="radio">
+                            <label for="35min" class="scroll-area">35</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="40min" name="minutes" value="40" style="visibility:collapse"
+                                class="radio">
+                            <label for="40min" class="scroll-area">40</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="45min" name="minutes" value="45" style="visibility:collapse"
+                                class="radio">
+                            <label for="45min" class="scroll-area ">45</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="50min" name="minutes" value="50" style="visibility:collapse"
+                                class="radio">
+                            <label for="50min" class="scroll-area">50</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="55min" name="minutes" value="55" style="visibility:collapse"
+                                class="radio">
+                            <label for="55min" class="scroll-area ">55</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="60min" name="minutes" value="60" style="visibility:collapse"
+                                class="radio">
+                            <label for="60min" class="scroll-area ">60</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="disabled2" name="minutes" value="0" disabled
+                                style="visibility:collapse">
+                            <label for="disabled" class="scroll-area" style="color:transparent">_</label>
+                        </div>
+                        <!-- <div>
+                            <input type="radio" id="disabled2" name="minutes" value="0" disabled
+                                style="visibility:collapse">
+                            <label for="disabled" class="scroll-area" style="color:transparent">_</label>
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+            
+            <br>
+            <button type="submit" id="submit" class="buttons"><img src="static/imgs/resume2.png" class = "icons">START</button>
+        </form>
+
+    </div>
+    </div>
+
+    <script type="text/javascript">
+        // move scroll to checked element
+        const focused = document.querySelector('.focus')
+        focused.scrollIntoView({ behavior: 'smooth' })
+
+    </script>
+
+    <script type="text/javascript">
+        function wheel($div, deltaY) {
+            var step = 90;
+            var pos = $div.scrollTop();
+            var nextPos = pos + (step * (-deltaY))
+            // console.log("DelatY: " + deltaY + ", Step: " + step + ", nextPos: " + nextPos);
+            $div.scrollTop(nextPos);
+        }
+
+        $('#container').bind('mousewheel', function (event, delta, deltaX, deltaY) {
+            if (delta > -2 && delta < 2) {
+                wheel($(this), deltaY);
+                event.preventDefault();
+            }
+            // console.log(delta);
+        });
+    </script>
+
+    <script type="text/javascript">
+
+
+        container = document.getElementById("container")
+
+        i = 0
+        function myFunction() {
+            console.log(container.scrollTop)
+
+            radio = document.getElementsByClassName('radio')
+
+            for (let i = 0; i < radio.length; i++) {
+                let step = 90 * (i);
+
+                if (container.scrollTop + 15 >= step && container.scrollTop < (step + 90 + 10)) {
+
+                    radio[i].checked = true;
+                } else {
+                    radio[i].checked = false;
+                }
+
+            }
+        }
+        container.addEventListener("scroll", myFunction);
+
+    </script>
+
+    <script type="text/javascript">
+        container = document.getElementById("container")
+        up = document.getElementById("up")
+
+        function moveUp() {
+            if (container.scrollTop > 50) {
+                container.scrollTop = container.scrollTop - 90;
+            }
+        }
+        up.addEventListener("click", moveUp);
+
+        down = document.getElementById("down")
+        function moveDown() {
+            if (container.scrollTop < 1080) {
+                container.scrollTop = container.scrollTop + 90;
+            }
+        }
+        down.addEventListener("click", moveDown);
+    </script>
+
+
+
+
+    {% else %}
+    <h1>Time left:</h1>
+    <h2 class="time"></h2>
+
+    {%if is_paused == 0 %}
+    <form action="/" method="post" class="form_buttons">
+        <button type="submit" id="pause" name="is_paused" value="1" class="buttons_big"><img src="static/imgs/pause2.png" class = "icons_big"></button>
+        <button type="submit" id="stop" name="stop" value="2" class="buttons_big"><img src="static/imgs/stop2.png" class = "icons_big"></button>
+    </form>
+
+    {%else%}
+    <form action="/" method="post" class="form_buttons">
+        <button type="submit" id="resume" name="resume" value="0" class="buttons_big"><img src="static/imgs/resume2.png" class = "icons_big"></button>
+        <button type="submit" id="stop" name="stop" value="2" class="buttons_big"><img src="static/imgs/stop2.png" class = "icons_big"></button>
+    </form>
+    {%endif%}
+
+    {% endif %}
+    {% endblock %}

@@ -1,0 +1,323 @@
+#Duck {
+  height: 36px;
+  width: 36px;
+  background: url("imgs/sprites/Duck_idle.png") 0px 0px;
+  -webkit-animation: duck 0.8s steps(10) infinite;
+          animation: duck 0.8s steps(10) infinite;
+}
+
+@-webkit-keyframes duck {
+  100% {
+    background-position: -360px;
+  }
+}
+
+@keyframes duck {
+  100% {
+    background-position: -360px;
+  }
+}
+#Bat {
+  height: 30px;
+  width: 46px;
+  background: url("imgs/sprites/Bat_idle.png") 0px 0px;
+  -webkit-animation: bat 0.8s steps(7) infinite;
+          animation: bat 0.8s steps(7) infinite;
+}
+
+@-webkit-keyframes bat {
+  100% {
+    background-position: -322px;
+  }
+}
+
+@keyframes bat {
+  100% {
+    background-position: -322px;
+  }
+}
+#Bunny {
+  height: 44px;
+  width: 34px;
+  background: url("imgs/sprites/Bunny_idle.png") 0px 0px;
+  -webkit-animation: bunny 0.8s steps(8) infinite;
+          animation: bunny 0.8s steps(8) infinite;
+}
+
+@-webkit-keyframes bunny {
+  100% {
+    background-position: -272px;
+  }
+}
+
+@keyframes bunny {
+  100% {
+    background-position: -272px;
+  }
+}
+#Radish {
+  height: 38px;
+  width: 30px;
+  background: url("imgs/sprites/Radish_idle.png") 0px 0px;
+  -webkit-animation: radish 0.8s steps(9) infinite;
+          animation: radish 0.8s steps(9) infinite;
+}
+
+@-webkit-keyframes radish {
+  100% {
+    background-position: -270px;
+  }
+}
+
+@keyframes radish {
+  100% {
+    background-position: -270px;
+  }
+}
+#Chameleon {
+  height: 38px;
+  width: 84px;
+  background: url("imgs/sprites/Chameleon_idle.png") 0px 0px;
+  -webkit-animation: chameleon 0.8s steps(13) infinite;
+          animation: chameleon 0.8s steps(13) infinite;
+}
+
+@-webkit-keyframes chameleon {
+  100% {
+    background-position: -1092px;
+  }
+}
+
+@keyframes chameleon {
+  100% {
+    background-position: -1092px;
+  }
+}
+#Bee {
+  height: 34px;
+  width: 36px;
+  background: url("imgs/sprites/Bee_idle.png") 0px 0px;
+  -webkit-animation: bee 0.8s steps(6) infinite;
+          animation: bee 0.8s steps(6) infinite;
+}
+
+@-webkit-keyframes bee {
+  100% {
+    background-position: -216px;
+  }
+}
+
+@keyframes bee {
+  100% {
+    background-position: -216px;
+  }
+}
+#Chicken {
+  height: 34px;
+  width: 32px;
+  background: url("imgs/sprites/Chicken_idle.png") 0px 0px;
+  -webkit-animation: chicken 0.8s steps(13) infinite;
+          animation: chicken 0.8s steps(13) infinite;
+}
+
+@-webkit-keyframes chicken {
+  100% {
+    background-position: -416px;
+  }
+}
+
+@keyframes chicken {
+  100% {
+    background-position: -416px;
+  }
+}
+#FatBird {
+  height: 48px;
+  width: 40px;
+  background: url("imgs/sprites/FatBird_idle.png") 0px 0px;
+  -webkit-animation: fatbird 0.8s steps(8) infinite;
+          animation: fatbird 0.8s steps(8) infinite;
+}
+
+@-webkit-keyframes fatbird {
+  100% {
+    background-position: -320px;
+  }
+}
+
+@keyframes fatbird {
+  100% {
+    background-position: -320px;
+  }
+}
+#Ghost {
+  height: 30px;
+  width: 44px;
+  background: url("imgs/sprites/Ghost_idle.png") 0px 0px;
+  -webkit-animation: ghost 0.8s steps(10) infinite;
+          animation: ghost 0.8s steps(10) infinite;
+}
+
+@-webkit-keyframes ghost {
+  100% {
+    background-position: -440px;
+  }
+}
+
+@keyframes ghost {
+  100% {
+    background-position: -440px;
+  }
+}
+#Mushroom {
+  height: 32px;
+  width: 32px;
+  background: url("imgs/sprites/Mushroom_idle.png") 0px 0px;
+  -webkit-animation: mushroom 0.8s steps(14) infinite;
+          animation: mushroom 0.8s steps(14) infinite;
+}
+
+@-webkit-keyframes mushroom {
+  100% {
+    background-position: -448px;
+  }
+}
+
+@keyframes mushroom {
+  100% {
+    background-position: -448px;
+  }
+}
+#Pig {
+  height: 30px;
+  width: 36px;
+  background: url("imgs/sprites/Pig_idle.png") 0px 0px;
+  -webkit-animation: pig 0.8s steps(9) infinite;
+          animation: pig 0.8s steps(9) infinite;
+}
+
+@-webkit-keyframes pig {
+  100% {
+    background-position: -324px;
+  }
+}
+
+@keyframes pig {
+  100% {
+    background-position: -324px;
+  }
+}
+#Plant {
+  height: 42px;
+  width: 44px;
+  background: url("imgs/sprites/Plant_idle.png") 0px 0px;
+  -webkit-animation: plant 0.8s steps(11) infinite;
+          animation: plant 0.8s steps(11) infinite;
+}
+
+@-webkit-keyframes plant {
+  100% {
+    background-position: -484px;
+  }
+}
+
+@keyframes plant {
+  100% {
+    background-position: -484px;
+  }
+}
+#Rino {
+  height: 34px;
+  width: 52px;
+  background: url("imgs/sprites/Rino_idle.png") 0px 0px;
+  -webkit-animation: rino 0.8s steps(11) infinite;
+          animation: rino 0.8s steps(11) infinite;
+}
+
+@-webkit-keyframes rino {
+  100% {
+    background-position: -572px;
+  }
+}
+
+@keyframes rino {
+  100% {
+    background-position: -572px;
+  }
+}
+#Slime {
+  height: 30px;
+  width: 44px;
+  background: url("imgs/sprites/Slime_idle.png") 0px 0px;
+  -webkit-animation: slime 0.8s steps(10) infinite;
+          animation: slime 0.8s steps(10) infinite;
+}
+
+@-webkit-keyframes slime {
+  100% {
+    background-position: -440px;
+  }
+}
+
+@keyframes slime {
+  100% {
+    background-position: -440px;
+  }
+}
+#Snail {
+  height: 24px;
+  width: 38px;
+  background: url("imgs/sprites/Snail_idle.png") 0px 0px;
+  -webkit-animation: snail 0.8s steps(15) infinite;
+          animation: snail 0.8s steps(15) infinite;
+}
+
+@-webkit-keyframes snail {
+  100% {
+    background-position: -570px;
+  }
+}
+
+@keyframes snail {
+  100% {
+    background-position: -570px;
+  }
+}
+#Trunk {
+  height: 32px;
+  width: 64px;
+  background: url("imgs/sprites/Trunk_idle.png") 0px 0px;
+  -webkit-animation: trunk 0.8s steps(18) infinite;
+          animation: trunk 0.8s steps(18) infinite;
+}
+
+@-webkit-keyframes trunk {
+  100% {
+    background-position: -1152px;
+  }
+}
+
+@keyframes trunk {
+  100% {
+    background-position: -1152px;
+  }
+}
+#BlueBird {
+  height: 32px;
+  width: 32px;
+  background: url("imgs/sprites/BlueBird_idle.png") 0px 0px;
+  -webkit-animation: bluebird 0.8s steps(9) infinite;
+          animation: bluebird 0.8s steps(9) infinite;
+}
+
+@-webkit-keyframes bluebird {
+  100% {
+    background-position: -288px;
+  }
+}
+
+@keyframes bluebird {
+  100% {
+    background-position: -288px;
+  }
+}/*# sourceMappingURL=animations.css.map */
