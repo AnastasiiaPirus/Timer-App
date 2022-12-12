@@ -170,8 +170,9 @@
         const progress_num = document.querySelector('.progress_num');
 
         function progressBar(progress_bar_actual) {
-
-            let progress_string = `${progress_bar_actual}/${progress_bar_total}m`
+            progress_bar_actual_minutes = Math.floor(progress_bar_actual / 60, 0);
+            progress_bar_total_minutes = Math.floor(progress_bar_total / 60, 0)
+            let progress_string = `${progress_bar_actual_minutes}/${progress_bar_total_minutes}m`
             progress_num.innerHTML = progress_string;
 
 

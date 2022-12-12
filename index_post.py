@@ -30,7 +30,7 @@ def render_index_post(user_id):
 
 def start_timer(user_id):
     minutes = request.form.get("minutes")
-    seconds = int(minutes)  # *60
+    seconds = int(minutes)*60
     db.execute("UPDATE timers SET timeramount = ? WHERE user_id= ? ;", seconds, user_id)
     timestamp = datetime.now()
     db.execute("UPDATE timers SET timestamp = ? WHERE user_id= ? ;", timestamp.strftime('%Y-%m-%d %H:%M:%S'),
@@ -79,8 +79,8 @@ def stop_timer(user_id):
 def resume_timer(user_id):
     timeramount = db.execute("SELECT timeramount FROM timers WHERE user_id = ? ;", user_id)
     timeramount = int(timeramount[0]['timeramount'])
-    minutes = timeramount
-    seconds = int(minutes)  # *60
+    seconds = timeramount
+    # seconds = int(minutes)  # *60
     # db.execute("UPDATE timers SET timeramount = ? WHERE user_id= ? ;", seconds , user_id)
     timestamp = datetime.now()
     
