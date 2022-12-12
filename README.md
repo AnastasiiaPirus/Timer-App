@@ -65,4 +65,5 @@ Also JS is used to display dynamic content on the field like sprites and decorat
 
 Another script was added to index.html to make user-friendly scroll-select for time choosing.
 
+***confetti.js*** was taken from https://www.cssscript.com/confetti-falling-animation/ , created by **mathusummut**.
 
