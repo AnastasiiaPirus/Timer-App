@@ -23,6 +23,7 @@ Session(app)
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///database.db")
+# db = SQL("sqlite:////home/apirus/mysite/database.db")
 
 from index_get import render_index_get
 from index_post import render_index_post
